@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_bookmarks_fragment"
+    app:startDestination="@id/bookmarksFragment">
+
+    <fragment
+        android:id="@+id/bookmarksFragment"
+        android:name="com.uszkaisandor.mvvmnewsapp.features.bookmarks.BookmarksFragment"
+        android:label="BookmarksFragment" />
+</navigation>

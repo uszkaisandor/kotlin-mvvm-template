@@ -37,6 +37,9 @@
                 android:text="@string/retry"
                 android:visibility="gone"
                 tools:visibility="visible" />
+
         </RelativeLayout>
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
