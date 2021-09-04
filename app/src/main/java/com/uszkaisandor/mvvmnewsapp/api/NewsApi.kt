@@ -1,5 +1,6 @@
 package com.uszkaisandor.mvvmnewsapp.api
 
+import com.uszkaisandor.mvvmnewsapp.BuildConfig
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -7,6 +8,7 @@ interface NewsApi {
 
     companion object {
         const val BASE_URL = "https://newsapi.org/v2/"
+        const val ACCESS_KEY = BuildConfig.NEWS_API_ACCESS_KEY
     }
 
     //@Headers("Non-Authenticated: true")

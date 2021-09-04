@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.uszkaisandor.mvvmnewsapp.api.NewsApi
+import com.uszkaisandor.mvvmnewsapp.data.AccountProperties
 import com.uszkaisandor.mvvmnewsapp.databinding.ActivityMainBinding
 import com.uszkaisandor.mvvmnewsapp.shared.SessionManager
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -15,9 +18,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private var selectedIndex = 0
 
+    @Inject
+    lateinit var sessionManager: SessionManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        sessionManager.setAccountProperties(AccountProperties(token = NewsApi.ACCESS_KEY))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
