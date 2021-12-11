@@ -25,6 +25,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
+import java.lang.IllegalArgumentException
 
 @AndroidEntryPoint
 class SearchNewsFragment : Fragment(R.layout.fragment_search_news),
@@ -151,6 +152,9 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news),
                             viewModel.refreshInProgress = false
                             viewModel.pendingScrollToTopAfterRefresh = false
                             viewModel.newQueryInProgress = false
+                        }
+                        else -> {
+                            throw IllegalArgumentException("LoadState is invalid")
                         }
                     }
                 }
